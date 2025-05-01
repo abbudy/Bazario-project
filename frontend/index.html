@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bazario - Marketplace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <h1>Bazario</h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#checkout">Checkout</a></li>
+            <li><a href="#order-tracking">Orders</a></li>
+            <li><a href="#admin-dashboard">Admin</a></li>
+            <li>
+              <a href="#" id="login-btn">Login</a>
+              <a href="#" id="signup-btn">Sign Up</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-login">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form" action="#" method="POST">
+          <label for="login-email">Email:</label>
+          <input type="email" name="email" id="login-email" placeholder="Enter your email" required />
+          <label for="login-password">Password:</label>
+          <input type="password" name="password" id="login-password" placeholder="Enter your password" required />
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <p>
+          Don’t have an account? <a href="#" id="open-signup">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- SIGNUP MODAL -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-signup">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form" action="#" method="POST">
+          <label for="signup-name">Name:</label>
+          <input type="text" name="name" id="signup-name" placeholder="Your full name" required />
+          <label for="signup-email">Email:</label>
+          <input type="email" name="email" id="signup-email" placeholder="Your email" required />
+          <label for="signup-password">Password:</label>
+          <input type="password" name="password" id="signup-password" placeholder="Create a password" required />
+          <button type="submit" class="btn">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-text">
+          <h1>Welcome to Bazario</h1>
+          <p>Your one-stop marketplace for authentic products and unbeatable deals.</p>
+          <button class="btn" id="shop-now-btn">Shop Now</button>
+        </div>
+        <div class="hero-image">
+          <img src="https://cdn.pixabay.com/photo/2017/01/04/20/15/bazar-1959278_1280.jpg" alt="Bazario Marketplace" />
+        </div>
+      </div>
+    </section>
+
+    <section id="search" class="search-section">
+      <div class="container">
+        <form class="search-form">
+          <input type="text" name="search" placeholder="Search products..." required />
+          <select name="category">
+            <option value="">All Categories</option>
+            <option value="fashion">Fashion</option>
+            <option value="electronics">Electronics</option>
+            <option value="home">Home &amp; Garden</option>
+            <option value="beauty">Beauty</option>
+          </select>
+          <button type="submit" class="btn">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- PRODUCT LISTINGS SECTION -->
+    <section id="products" class="products-section">
+      <div class="container">
+        <h2>Product Listings</h2>
+        <div class="products-grid">
+        
+          <div class="product-item">
+            <img src="https://via.placeholder.com/200" alt="Product 1" />
+            <div class="product-details">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+              <button class="btn">Details</button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img src="https://via.placeholder.com/200" alt="Product 2" />
+            <div class="product-details">
+              <h3>Product 2</h3>
+              <p>$29.99</p>
+              <button class="btn">Details</button>
+            </div>
+          </div>
+          <div class="product-item">
+            <img src="https://via.placeholder.com/200" alt="Product 3" />
+            <div class="product-details">
+              <h3>Product 3</h3>
+              <p>$99.99</p>
+              <button class="btn">Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CART & WISHLIST SECTION -->
+    <section id="cart-wishlist" class="cart-wishlist-section">
+      <div class="container">
+        <h2>Shopping Cart &amp; Wishlist</h2>
+        <div class="cart-wishlist-container">
+          <div class="shopping-cart">
+            <h3>Shopping Cart</h3>
+            <ul class="cart-items">
+              <li>Your cart is currently empty.</li>
+            </ul>
+            <button class="btn">View Cart</button>
+          </div>
+          <div class="wishlist">
+            <h3>Wishlist</h3>
+            <ul class="wishlist-items">
+              <li>No items in your wishlist.</li>
+            </ul>
+            <button class="btn">View Wishlist</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURE CHECKOUT SECTION -->
+    <section id="checkout" class="checkout-section">
+      <div class="container">
+        <h2>Secure Checkout &amp; Payment</h2>
+        <form class="checkout-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="checkout-fullname">Full Name</label>
+            <input type="text" id="checkout-fullname" name="fullname" placeholder="Full Name" required />
+          </div>
+          <div class="form-group">
+            <label for="checkout-address">Address</label>
+            <input type="text" id="checkout-address" name="address" placeholder="Shipping Address" required />
+          </div>
+          <div class="form-group">
+            <label for="checkout-card">Credit Card</label>
+            <input type="text" id="checkout-card" name="card" placeholder="Card Number" required />
+          </div>
+          <div class="form-group">
+            <label for="checkout-expiry">Expiry Date</label>
+            <input type="text" id="checkout-expiry" name="expiry" placeholder="MM/YY" required />
+          </div>
+          <div class="form-group">
+            <label for="checkout-cvc">CVC</label>
+            <input type="text" id="checkout-cvc" name="cvc" placeholder="CVC" required />
+          </div>
+          <button type="submit" class="btn">Process Payment</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ORDER TRACKING & NOTIFICATIONS SECTION -->
+    <section id="order-tracking" class="order-tracking-section">
+      <div class="container">
+        <h2>Order Tracking &amp; Notifications</h2>
+        <p>Track your orders and view status updates below.</p>
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ORD12345</td>
+              <td>2025-04-25</td>
+              <td>Shipped</td>
+              <td>$49.99</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- REVIEWS & RATINGS SECTION -->
+    <section id="reviews" class="reviews-section">
+      <div class="container">
+        <h2>Reviews &amp; Ratings</h2>
+        <div class="reviews-list">
+          <article class="review">
+            <h4>John Doe</h4>
+            <p>Great product! Excellent quality and fast shipping.</p>
+            <span class="rating">★★★★☆</span>
+          </article>
+        </div>
+        <div class="review-form">
+          <h3>Leave a Review</h3>
+          <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <textarea name="review" placeholder="Your review..." required></textarea>
+            <select name="rating" required>
+              <option value="">Select Rating</option>
+              <option value="5">★★★★★</option>
+              <option value="4">★★★★☆</option>
+              <option value="3">★★★☆☆</option>
+              <option value="2">★★☆☆☆</option>
+              <option value="1">★☆☆☆☆</option>
+            </select>
+            <button type="submit" class="btn">Submit Review</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN DASHBOARD SECTION -->
+    <section id="admin-dashboard" class="admin-dashboard-section">
+      <div class="container">
+        <h2>Admin Dashboard</h2>
+        <div class="dashboard">
+          <div class="dashboard-menu">
+            <button class="btn">Manage Products</button>
+            <button class="btn">Manage Orders</button>
+            <button class="btn">Manage Users</button>
+            <button class="btn">Promotions</button>
+          </div>
+          <div class="dashboard-content">
+            <h3>Inventory Overview</h3>
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Product</th>
+                  <th>Stock</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>P001</td>
+                  <td>Product 1</td>
+                  <td>50</td>
+                  <td>$49.99</td>
+                </tr>
+                <tr>
+                  <td>P002</td>
+                  <td>Product 2</td>
+                  <td>30</td>
+                  <td>$29.99</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDATIONS SECTION -->
+    <section id="recommendations" class="recommendations-section">
+      <div class="container">
+        <h2>Recommended For You</h2>
+        <div class="recommendations-grid">
+          <div class="recommendation-item">
+            <img src="https://via.placeholder.com/200" alt="Recommended Product 1" />
+            <div class="recommendation-info">
+              <h3>Featured Product</h3>
+              <p>$59.99</p>
+            </div>
+          </div>
+          <div class="recommendation-item">
+            <img src="https://via.placeholder.com/200" alt="Recommended Product 2" />
+            <div class="recommendation-info">
+              <h3>Special Offer</h3>
+              <p>$39.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-container">
+        <p>&copy; 2025 Bazario. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
