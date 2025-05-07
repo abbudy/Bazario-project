@@ -1,314 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bazario - Marketplace</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="container header-container">
-        <div class="logo">
-          <h1>Bazario</h1>
-        </div>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#checkout">Checkout</a></li>
-            <li><a href="#order-tracking">Orders</a></li>
-            <li><a href="#admin-dashboard">Admin</a></li>
-            <li>
-              <a href="#" id="login-btn">Login</a>
-              <a href="#" id="signup-btn">Sign Up</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAZARIO</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- LOGIN MODAL -->
-    <div id="login-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="close-login">&times;</span>
-        <h2>Login</h2>
-        <form id="login-form" action="#" method="POST">
-          <label for="login-email">Email:</label>
-          <input type="email" name="email" id="login-email" placeholder="Enter your email" required />
-          <label for="login-password">Password:</label>
-          <input type="password" name="password" id="login-password" placeholder="Enter your password" required />
-          <button type="submit" class="btn">Login</button>
-        </form>
-        <p>
-          Don’t have an account? <a href="#" id="open-signup">Sign Up</a>
-        </p>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="nav-dropdown">
+  <button class="nav-btn">Categories</button>
+  <div class="mega-menu">
+    <div class="mega-column">
+      <h4>Home & Living</h4>
+      <a href="#">Wall Decor</a>
+      <a href="#">Lighting</a>
+      <a href="#">Storage</a>
+    </div>
+    <div class="mega-column">
+      <h4>Jewelry</h4>
+      <a href="#">Necklaces</a>
+      <a href="#">Bracelets</a>
+      <a href="#">Rings</a>
+    </div>
+    <div class="mega-column">
+      <h4>Clothing</h4>
+      <a href="#">Women's</a>
+      <a href="#">Men's</a>
+      <a href="#">Kids'</a>
+    </div>
+    <div class="mega-column">
+      <h4>Craft Supplies</h4>
+      <a href="#">Fabric</a>
+      <a href="#">Beads</a>
+      <a href="#">Patterns</a>
+    </div>
+  </div>
+</div>
+
+
+    
+    <div class="logo">BAZARIO</div>
+    
+    <div class="search-bar">
+      <input type="text" placeholder="Search for anything" />
+      
+       <button><i class="fas fa-search"></i></button>
+      
+    </div>
+    
+    
+    
+    <nav class="nav-links">
+      <a href="#">Gifts</a>
+      <a href="#">Mother’s Day Gifts</a>
+      <a href="#">Home Furniture</a>
+      <a href="#">Fashion Finds</a>
+      <a href="#">Registry</a>
+    </nav>
+    
+    <div class="icons">
+      
+      <span class="icon">❤️</span>
+      
+      <div class="cart-container">
+
+  <button id="cartToggle"><i class="lucide-cart"></i>
+    🛒 <span id="cart-count">0</span>
+  </button>
+</div>
+<div id="cartDropdown" class="cart-dropdown hidden">
+  <div id="cartItems"></div>
+  <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
+</div>
+
+    </div>
+    <div class="account-dropdown-wrapper">
+  <button class="account-button">
+    <i class="fas fa-user"></i>
+    <span>Sign in</span>
+  </button>
+  <div class="account-dropdown">
+    <a href="#">Sign in</a>
+    <a href="#">Register</a>
+    <hr />
+    <a href="#">Orders</a>
+    <a href="#">Favourites</a>
+    <a href="#">Account Settings</a>
+  </div>
+</div>
+
+  </header>
+  
+  <section class="hero-banner">
+  <div class="hero-content">
+    <h1>Find things you'll love. Support independent sellers.</h1>
+    <p>Only on BAZARIO.</p>
+    <a href="#" class="hero-btn">Explore Now</a>
+  </div>
+</section>
+  
+  
+  
+  <section class="featured-categories">
+  <h2>Shop by Category</h2>
+  <div class="category-grid">
+    <div class="category-item">
+      <img src="https://i.etsystatic.com/53633588/r/il/07335b/6523810440/il_1588xN.6523810440_t87i.jpg" alt="Jewelry">
+      <span>Jewelry & Accessories</span>
+      
+    </div>
+    <div class="category-item">
+      <img src="https://i.etsystatic.com/58377072/r/il/e0cdc0/6764720074/il_1588xN.6764720074_inxv.jpg" alt="Clothing">
+      <span>Clothing </span>
+    </div>
+    <div class="category-item">
+      <img src="https://i.etsystatic.com/55696104/r/il/28fe8d/6489992050/il_1588xN.6489992050_tjjo.jpg" alt="Home">
+      <span>Home & Living</span>
+    </div>
+    <div class="category-item">
+      <img src="https://i.etsystatic.com/54481890/r/il/cfdbb4/6506374289/il_1588xN.6506374289_f2ds.jpg" alt="Wedding">
+      <span>Wedding & Party</span>
+    </div>
+    <div class="category-item">
+      <img src="https://i.etsystatic.com/39082516/r/il/542ad4/5810601062/il_1588xN.5810601062_9d9e.jpg" alt="Toys">
+      <span>Toys & Entertainment</span>
+    </div>
+  </div>
+</section>
+  
+  <section class="editors-picks">
+  <h2>Gift Package</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://i.etsystatic.com/44379420/r/il/cae43d/6300304335/il_1588xN.6300304335_n8wo.jpg" alt="Product 1">
+      <div class="product-info">
+        <p class="product-title">Custom Name Necklace</p>
+        <p class="product-price">$25.00</p>
+        <div class="product-card">
+        <button class="add-to-cart" data-title="custom-name" data-price="24.99">Add to Cart</button>
+
+        </div>
       </div>
     </div>
+    <div class="product-card">
+      <img src="https://i.etsystatic.com/23721895/r/il/8f0d0f/6739424392/il_1588xN.6739424392_jzbt.jpg">
+      <div class="product-info">
+        <p class="product-title">gift Package</p>
+        <p class="product-price">$18.00</p>
+         <div class="product-card">
+        <button class="add-to-cart" data-title="git package" data-price="18">Add to Cart</button>
 
-    <!-- SIGNUP MODAL -->
-    <div id="signup-modal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="close-signup">&times;</span>
-        <h2>Sign Up</h2>
-        <form id="signup-form" action="#" method="POST">
-          <label for="signup-name">Name:</label>
-          <input type="text" name="name" id="signup-name" placeholder="Your full name" required />
-          <label for="signup-email">Email:</label>
-          <input type="email" name="email" id="signup-email" placeholder="Your email" required />
-          <label for="signup-password">Password:</label>
-          <input type="password" name="password" id="signup-password" placeholder="Create a password" required />
-          <button type="submit" class="btn">Sign Up</button>
-        </form>
+        </div>
       </div>
     </div>
+    <div class="product-card">
+      <img src="https://i.etsystatic.com/58170303/r/il/a68f53/6841756834/il_1588xN.6841756834_82qi.jpg" alt="Product 3">
+      <div class="product-info">
+        <p class="product-title">Toy Art</p>
+        <p class="product-price">$15.00</p>
+         <div class="product-card">
+        <button class="add-to-cart" data-title="toy" data-price="15">Add to Cart</button>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero-section">
-      <div class="container hero-container">
-        <div class="hero-text">
-          <h1>Welcome to Bazario</h1>
-          <p>Your one-stop marketplace for authentic products and unbeatable deals.</p>
-          <button class="btn" id="shop-now-btn">Shop Now</button>
-        </div>
-        <div class="hero-image">
-          <img src="https://cdn.pixabay.com/photo/2017/01/04/20/15/bazar-1959278_1280.jpg" alt="Bazario Marketplace" />
         </div>
       </div>
-    </section>
+    </div>
+    <div class="product-card">
+      <img src="https://i.etsystatic.com/33418327/r/il/84969c/6873954019/il_1588xN.6873954019_5fvj.jpg" alt="Product 4">
+      <div class="product-info">
+        <p class="product-title">Boys shoes</p>
+        <p class="product-price">$12.00</p>
+        <div class="product-card">
+        <button class="add-to-cart" data-title="boy-shoes" data-price="24.99">Add to Cart</button>
 
-    <section id="search" class="search-section">
-      <div class="container">
-        <form class="search-form">
-          <input type="text" name="search" placeholder="Search products..." required />
-          <select name="category">
-            <option value="">All Categories</option>
-            <option value="fashion">Fashion</option>
-            <option value="electronics">Electronics</option>
-            <option value="home">Home &amp; Garden</option>
-            <option value="beauty">Beauty</option>
-          </select>
-          <button type="submit" class="btn">Search</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- PRODUCT LISTINGS SECTION -->
-    <section id="products" class="products-section">
-      <div class="container">
-        <h2>Product Listings</h2>
-        <div class="products-grid">
-        
-          <div class="product-item">
-            <img src="https://via.placeholder.com/200" alt="Product 1" />
-            <div class="product-details">
-              <h3>Product 1</h3>
-              <p>$49.99</p>
-              <button class="btn">Details</button>
-            </div>
-          </div>
-          <div class="product-item">
-            <img src="https://via.placeholder.com/200" alt="Product 2" />
-            <div class="product-details">
-              <h3>Product 2</h3>
-              <p>$29.99</p>
-              <button class="btn">Details</button>
-            </div>
-          </div>
-          <div class="product-item">
-            <img src="https://via.placeholder.com/200" alt="Product 3" />
-            <div class="product-details">
-              <h3>Product 3</h3>
-              <p>$99.99</p>
-              <button class="btn">Details</button>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+  
+  <section class="popular-now">
+  <h2>Electronics</h2>
+  <div class="popular-items">
+    <div class="item-card">
+      <img src="https://i.etsystatic.com/23529908/r/il/18a4b8/6365074822/il_1588xN.6365074822_2bfe.jpg" alt="Item 1">
+      <p>Electronics<br><span>$1200.00</span></p>
+       <div class="product-card">
+        <button class="add-to-cart" data-title="electronics" data-price="1024.99">Add to Cart</button>
 
-    <!-- CART & WISHLIST SECTION -->
-    <section id="cart-wishlist" class="cart-wishlist-section">
-      <div class="container">
-        <h2>Shopping Cart &amp; Wishlist</h2>
-        <div class="cart-wishlist-container">
-          <div class="shopping-cart">
-            <h3>Shopping Cart</h3>
-            <ul class="cart-items">
-              <li>Your cart is currently empty.</li>
-            </ul>
-            <button class="btn">View Cart</button>
-          </div>
-          <div class="wishlist">
-            <h3>Wishlist</h3>
-            <ul class="wishlist-items">
-              <li>No items in your wishlist.</li>
-            </ul>
-            <button class="btn">View Wishlist</button>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+    <div class="scroll-item">
+      <img src="https://i.etsystatic.com/35526977/r/il/f00ec4/6544393909/il_1588xN.6544393909_h0oo.jpg" alt="Item 2">
+      <p>Headsets<br><span>$35.00</span></p>
+       <div class="product-card">
+        <button class="add-to-cart" data-title="headset" data-price="24.99">Add to Cart</button>
 
-    <!-- SECURE CHECKOUT SECTION -->
-    <section id="checkout" class="checkout-section">
-      <div class="container">
-        <h2>Secure Checkout &amp; Payment</h2>
-        <form class="checkout-form" action="#" method="POST">
-          <div class="form-group">
-            <label for="checkout-fullname">Full Name</label>
-            <input type="text" id="checkout-fullname" name="fullname" placeholder="Full Name" required />
-          </div>
-          <div class="form-group">
-            <label for="checkout-address">Address</label>
-            <input type="text" id="checkout-address" name="address" placeholder="Shipping Address" required />
-          </div>
-          <div class="form-group">
-            <label for="checkout-card">Credit Card</label>
-            <input type="text" id="checkout-card" name="card" placeholder="Card Number" required />
-          </div>
-          <div class="form-group">
-            <label for="checkout-expiry">Expiry Date</label>
-            <input type="text" id="checkout-expiry" name="expiry" placeholder="MM/YY" required />
-          </div>
-          <div class="form-group">
-            <label for="checkout-cvc">CVC</label>
-            <input type="text" id="checkout-cvc" name="cvc" placeholder="CVC" required />
-          </div>
-          <button type="submit" class="btn">Process Payment</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- ORDER TRACKING & NOTIFICATIONS SECTION -->
-    <section id="order-tracking" class="order-tracking-section">
-      <div class="container">
-        <h2>Order Tracking &amp; Notifications</h2>
-        <p>Track your orders and view status updates below.</p>
-        <table class="order-table">
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ORD12345</td>
-              <td>2025-04-25</td>
-              <td>Shipped</td>
-              <td>$49.99</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- REVIEWS & RATINGS SECTION -->
-    <section id="reviews" class="reviews-section">
-      <div class="container">
-        <h2>Reviews &amp; Ratings</h2>
-        <div class="reviews-list">
-          <article class="review">
-            <h4>John Doe</h4>
-            <p>Great product! Excellent quality and fast shipping.</p>
-            <span class="rating">★★★★☆</span>
-          </article>
         </div>
-        <div class="review-form">
-          <h3>Leave a Review</h3>
-          <form action="#" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <textarea name="review" placeholder="Your review..." required></textarea>
-            <select name="rating" required>
-              <option value="">Select Rating</option>
-              <option value="5">★★★★★</option>
-              <option value="4">★★★★☆</option>
-              <option value="3">★★★☆☆</option>
-              <option value="2">★★☆☆☆</option>
-              <option value="1">★☆☆☆☆</option>
-            </select>
-            <button type="submit" class="btn">Submit Review</button>
-          </form>
-        </div>
-      </div>
-    </section>
+    </div>
+    <div class="scroll-item">
+      <img src="https://i.etsystatic.com/49033657/r/il/5ef398/6577814121/il_1588xN.6577814121_ksew.jpg" alt="Item 3">
+      <p>E-tron<br><span>$88.00</span></p>
+      <button class="add-to-cart" data-title="etron" data-price="88.99">Add to Cart</button>
 
-    <!-- ADMIN DASHBOARD SECTION -->
-    <section id="admin-dashboard" class="admin-dashboard-section">
-      <div class="container">
-        <h2>Admin Dashboard</h2>
-        <div class="dashboard">
-          <div class="dashboard-menu">
-            <button class="btn">Manage Products</button>
-            <button class="btn">Manage Orders</button>
-            <button class="btn">Manage Users</button>
-            <button class="btn">Promotions</button>
-          </div>
-          <div class="dashboard-content">
-            <h3>Inventory Overview</h3>
-            <table class="dashboard-table">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Product</th>
-                  <th>Stock</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>P001</td>
-                  <td>Product 1</td>
-                  <td>50</td>
-                  <td>$49.99</td>
-                </tr>
-                <tr>
-                  <td>P002</td>
-                  <td>Product 2</td>
-                  <td>30</td>
-                  <td>$29.99</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+    <div class="scroll-item">
+      <img src="https://i.etsystatic.com/41067354/r/il/ccafeb/6368899660/il_1588xN.6368899660_1pw6.jpg" alt="Item 4">
+      <p>Vintage Clock<br><span>$48.00</span></p>
+      <button class="add-to-cart" data-title="vintage" data-price="48.99">Add to Cart</button>
 
-    <!-- RECOMMENDATIONS SECTION -->
-    <section id="recommendations" class="recommendations-section">
-      <div class="container">
-        <h2>Recommended For You</h2>
-        <div class="recommendations-grid">
-          <div class="recommendation-item">
-            <img src="https://via.placeholder.com/200" alt="Recommended Product 1" />
-            <div class="recommendation-info">
-              <h3>Featured Product</h3>
-              <p>$59.99</p>
-            </div>
-          </div>
-          <div class="recommendation-item">
-            <img src="https://via.placeholder.com/200" alt="Recommended Product 2" />
-            <div class="recommendation-info">
-              <h3>Special Offer</h3>
-              <p>$39.99</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+    <div class="scroll-item">
+      <img src="https://i.etsystatic.com/52393915/r/il/532220/5989085548/il_1588xN.5989085548_7gtu.jpg" alt="Item 5">
+      <p>Watchs<br><span>$2200.00</span></p>
+      <button class="add-to-cart" data-title="watch" data-price="2200">Add to Cart</button>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="container footer-container">
-        <p>&copy; 2025 Bazario. All Rights Reserved.</p>
-      </div>
-    </footer>
+    </div>
+  </div>
+</section>
 
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+
+
+
+  <main class="hero-section">
+  <section class="hero-banner">
+    <div class="hero-text">
+      <h2>It's not too late</h2>
+      <p>Special can be speedy with small shops</p>
+      <button>Make Mom’s day</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://i.etsystatic.com/5992384/r/il/167eef/6312921795/il_1588xN.6312921795_f8p4.jpg" alt="leather" />
+    </div>
+    <div class="side-image">
+      <img src="https://i.etsystatic.com/18374692/r/il/cb1d35/6314929646/il_1588xN.6314929646_c55s.jpg" alt="Baby" />
+      <span>Flowers<br /><small>Shop now</small></span>
+    </div>
+  </section>
+</main>
+<section class="carousel-section">
+  <h3>Recently viewed</h3>
+  <div class="carousel">
+    <div class="carousel-item">
+      <img src="https://i.etsystatic.com/43646999/r/il/9355b5/5371873886/il_1588xN.5371873886_rdow.jpg" alt="peerfume" />
+      <p>USD 12.00+</p>
+      <button class="add-to-cart" data-title="Perfume" data-price="24.99">Add to Cart</button>
+
+    </div>
+    <!-- Duplicate this .carousel-item for more items -->
+  </div>
+</section>
+
+<section class="carousel-section">
+  <h3>More must-haves for Mom</h3>
+  <div class="carousel">
+    <div class="carousel-item round">
+      <img src="https://i.etsystatic.com/10163369/r/il/806c2d/5945914059/il_1588xN.5945914059_4ftb.jpg" alt="tshirt" />
+      <p>Mother’s Day Gifts</p>
+      
+      <p>USD $23.00+</p>
+      <button class="add-to-cart" data-title="mother-gift" data-price="24.99">Add to Cart</button>
+
+      
+    </div>
+    <div class="carousel-item round">
+      <img src="https://i.etsystatic.com/25978607/r/il/9fbad2/6104578299/il_1588xN.6104578299_o4wj.jpg" alt="smallbag" />
+      <p>Clothing Gifts</p>
+      <p>USD 12.00+</p>
+      <button class="add-to-cart" data-title="clothing gift " data-price="24.99">Add to Cart</button>
+
+    </div>
+    <!-- Add more .carousel-item as needed -->
+  </div>
+</section>
+  <section class="popular-now">
+  <h2>Popular right now</h2>
+  <div class="popular-items">
+    <div class="item-card">
+      <img src="https://i.etsystatic.com/46386306/r/il/dbeff9/6760454026/il_1588xN.6760454026_cxem.jpg" alt="Trending item 1">
+      <p>Personalized Necklace</p>
+      
+      <p>USD $532.00+</p>
+      <button class="add-to-cart" data-title="necklace" data-price="24.99">Add to Cart</button>
+
+    </div>
+    <div class="item-card">
+      <img src="https://i.etsystatic.com/41689697/r/il/8eedd2/6853709943/il_1588xN.6853709943_7jgm.jpg" alt="Trending item 2">
+      <p>Custom Portrait</p>
+      <p>USD $430.00+</p>
+      <button class="add-to-cart" data-title="Product Name" data-price="24.99">Add to Cart</button>
+
+    </div>
+    
+    <section class="trending-section">
+  
+  <div class="trending-carousel" id="trending-carousel">
+    <div class="trend-item">
+      <img src="https://i.etsystatic.com/32583885/r/il/403c65/6018667371/il_1588xN.6018667371_bmcf.jpg" alt="Product 2">
+      <p>watchs</p>
+      
+      <p>USD $1223.00+</p>
+      <button class="add-to-cart" data-title="watch" data-price="1224.99">Add to Cart</button>
+
+    </div>
+    <div class="trend-item">
+      <img src="https://via.placeholder.com/200x150" alt="Product 2">
+      <p>Vintage Necklace</p>
+      
+      <p>USD $123.00+</p>
+     <button class="add-to-cart" data-title="vintage" data-price="124.99">Add to Cart</button>
+
+    </div>
+    <div class="trend-item">
+      
+      
+      
+    </div>
+    <!-- Add more items -->
+  </div>
+</section>
+
+    
+    
+    <div class="item-card">
+      <img src="https://i.etsystatic.com/35744154/r/il/08031e/6077761417/il_1588xN.6077761417_h10j.jpg" alt="Trending item 3">
+      <p>Pet Keychain</p>
+      <p>USD $300.00+</p>
+      <div  class="product-card">
+      <button class="add-to-cart" data-title="Pet chain" data-price="300.99">Add to Cart</button>
+
+      </div>
+    </div>
+    <div class="item-card">
+      <img src="https://i.etsystatic.com/11934837/r/il/ef4b67/5829812235/il_1588xN.5829812235_ci07.jpg" alt="Trending item 4">
+      <p>Wedding Ring Set</p>
+      
+      <p>USD $2300.00+</p>
+      <button class="add-to-cart" data-title="ring" data-price="2224.99">Add to Cart</button>
+
+    </div>
+    <!-- Add more items as needed -->
+  </div>
+</section>
+  <section class="shop-category">
+  <h2>Shop by Category</h2>
+  <div class="category-grid">
+    <div class="category-card">
+      <img src="https://i.etsystatic.com/51298786/r/il/bd3d50/6215638465/il_1588xN.6215638465_1pau.jpg" alt="Jewelry">
+      <p>Jewelry</p>
+    </div>
+    <div class="category-card">
+      <img src="https://i.etsystatic.com/30895203/r/il/88e196/6679093938/il_1588xN.6679093938_lhot.jpg" alt="Clothing">
+      <p>Clothing</p>
+    </div>
+    <div class="category-card">
+      <img src="https://i.etsystatic.com/36044456/r/il/55212c/6704789076/il_1588xN.6704789076_g0de.jpg" alt="Home & Living">
+      <p>Home & Living</p>
+    </div>
+    <div class="category-card">
+      <img src="https://i.etsystatic.com/53523425/r/il/e1ff5f/6356710142/il_1588xN.6356710142_h1r9.jpg" alt="Weddings">
+      <p>Weddings</p>
+    </div>
+    <div class="category-card">
+      <img src="https://i.etsystatic.com/41689697/r/il/ae23dd/6853708251/il_1588xN.6853708251_p3gf.jpg" alt="Toys & Entertainment">
+      <p>Toys & Entertainment</p>
+    </div>
+    <div class="category-card">
+      <img src="https://i.etsystatic.com/41689697/r/il/85d39c/6805702646/il_1588xN.6805702646_om3v.jpg" alt="Art & Collectibles">
+      <p>Art & Collectibles</p>
+    </div>
+    <!-- Add more categories if needed -->
+  </div>
+</section>
+  <section class="editors-picks">
+  <h2>Editor's Picks</h2>
+  <div class="picks-grid">
+    <div class="pick-card">
+      <img src="https://i.etsystatic.com/59337687/r/il/b01082/6838001636/il_1588xN.6838001636_c94y.jpg" alt="Pick 1">
+      <h3>Mobile phone</h3>
+      <p>$2800.00</p>
+      
+      <button class="add-to-cart" data-title="mobile phone" data-price="2800.99">Add to Cart</button>
+
+    </div>
+    <div class="pick-card">
+      <img src="https://i.etsystatic.com/36496902/r/il/ee42f7/6321475074/il_1588xN.6321475074_ik76.jpg" alt="Pick 2">
+      <h3>Personalized Name Necklace</h3>
+      <p>$45.00</p>
+     <button class="add-to-cart" data-title="Product" data-price="45.99">Add to Cart</button>
+
+    </div>
+    <div class="pick-card">
+      <img src="https://i.etsystatic.com/44300313/r/il/b996a5/6201619597/il_1588xN.6201619597_l9us.jpg" alt="Pick 3">
+      <h3>Rustic Wall Art</h3>.jp
+      <p>$60.00</p>
+      <button class="add-to-cart" data-title="Product Name" data-price="24.99">Add to Cart</button>
+
+    </div>
+    <div class="pick-card">
+      <img src="https://i.etsystatic.com/58907666/r/il/f0c957/6836129818/il_1588xN.6836129818_t7kr.jpg" alt="Pick 4">
+      <h3>Eco-Friendly Candle Set</h3>
+      <p>$35.00</p>
+      <button class="add-to-cart" data-title="Product Name" data-price="24.99">Add to Cart</button>
+
+    </div>
+  </div>
+</section>
+
+<section class="promo-banner">
+  <div class="promo-content">
+    <h2>Get the best of BAZARIO in your inbox</h2>
+    <p>Be the first to know about new arrivals, trends, and promotions.</p>
+    <form class="promo-form">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+  <footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-column">
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="#">Gift cards</a></li>
+        <li><a href="#">Bazario blog</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <ul>
+        <li><a href="#">Our story</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Investors</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Order Tracking</a></li>
+        <li><a href="#">Returns & exchanges</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#"><img src="icons/facebook.svg" alt="Facebook" /></a>
+        <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
+        <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 BAZARIO, Inc. All rights reserved.</p>
+    <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a></p>
+  </div>
+</footer>
+ ''' <!-- Hamburger Menu -->
+<button id="menu-btn">☰</button>
+<nav id="mobile-menu" class="hidden"> ... </nav>
+
+<!--
+<button id="search-icon">🔍</button>
+<div id="search-bar" class="hidden">
+  <input type="text" placeholder="Search BAZARIO...">
+</div>
+
+<button id="dropdown-btn">Categories ▼</button>
+<div id="dropdown-menu" class="hidden">
+  <a href="#">Jewelry</a>
+  <a href="#">Home Decor</a>
+  <a href="#">Clothing</a>
+</div>
+
+
+<button id="theme-toggle">🌓</button>-->
+  
+  
+  <button id="backToTop" title="Back to top">↑</button>
+  
+  <div id="newsletterModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Get exclusive offers, unique gift ideas, and personalized tips.</p>
+    <form>
+      <input type="email" placeholder="Your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+<script src="script.js"></script>
+
+  
+  
+  
+
+
   </body>
-</html>
+
+  
+<script src="script.js"></script>
+
+
+
+
+
