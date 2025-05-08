@@ -20,27 +20,35 @@ function renderCart() {
   cartTotalElement.textContent = total.toFixed(2);
 }
 
+
 document.querySelectorAll('.add-to-cart').forEach(button => {
   button.addEventListener('click', () => {
     const title = button.getAttribute('data-title');
-    const price = parseFloat(button.getAttribute('data-price'));
+    const price = button.getAttribute('data-price');
 
-    cart.push({ title, price });
+    fetch('/bazario/backend/cart.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: `action=add&title=${encodeURIComponent(title)}&price=${price}`
+    })
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('cart-count').textContent = data.count;
+      document.getElementById('cart-total-display').textContent = `$${data.total.toFixed(2)}`;
 
-    if (cartCountElement) {
-      cartCountElement.textContent = cart.length;
-    }
-
-    renderCart();
-
-    button.textContent = "Added!";
-    button.disabled = true;
-    setTimeout(() => {
-      button.textContent = "Add to Cart";
-      button.disabled = false;
-    }, 1500);
+      button.textContent = 'Added!';
+      button.disabled = true;
+      setTimeout(() => {
+        button.textContent = 'Add to Cart';
+        button.disabled = false;
+      }, 1500);
+    });
   });
 });
+
+
 
 cartToggle.addEventListener("click", () => {
   cartDropdown.classList.toggle("show");
@@ -106,5 +114,39 @@ function autoScroll() {
 
 setInterval(autoScroll, 30); // Scroll speed — lower is faster
 
+function searchProducts() {
+  const q = document.getElementById('searchInput').value;
+  const category = document.getElementById('categoryFilter').value;
+  const minPrice = document.getElementById('minPrice').value;
+  const maxPrice = document.getElementById('maxPrice').value;
+
+  const params = new URLSearchParams({
+    q,
+    category,
+    minPrice,
+    maxPrice
+  });
+
+  fetch(`/backend/search.php?${params.toString()}`)
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById('productResults');
+      container.innerHTML = '';
+      if (data.length === 0) {
+        container.innerHTML = '<p>No products found.</p>';
+        return;
+      }
+      data.forEach(product => {
+        container.innerHTML += `
+          <div>
+            <h3>${product.title}</h3>
+            <p>${product.description}</p>
+            <p>Category: ${product.category}</p>
+            <p>Price: $${product.price}</p>
+          </div>
+        `;
+      });
+    });
+}
 
   
