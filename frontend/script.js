@@ -150,3 +150,17 @@ function searchProducts() {
 }
 
   
+function placeOrder(cartItems, total) {
+  fetch('/backend/place_order.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ items: cartItems, total })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert("Order placed! ID: " + data.order_id);
+      
+    }
+  });
+}
