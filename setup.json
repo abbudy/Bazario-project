@@ -1,5 +1,4 @@
-// Create database in mongoDB
-//User Authentication & Profiles
+
 {
   "username": "admin",
   "email": "admin@bazario.com",
@@ -12,7 +11,7 @@
 }
 
 
-//Categories Collection
+
 {
   "name": "Electronics",
   "description": "Electronic devices and accessories",
@@ -43,7 +42,7 @@
   "created_at": { "$date": "NOW" },
   "updated_at": { "$date": "NOW" }
 }
-//Products Collection (products)
+
 {
   "category_id": ObjectId("123456"), 
   "name": "Smartphone X",
@@ -63,7 +62,7 @@
   "updated_at": { "$date": "NOW" }
 }
 
-//Orders Collection (orders)
+
 {
   "user_id": ObjectId("123456"),
   "total_amount": 120.75,
@@ -75,7 +74,6 @@
   "updated_at": { "$date": "NOW" }
 }
 
-//Order Items Collection (order_items)
 {
   "order_id": ObjectId("111111"),
   "product_id": ObjectId("022222"),
@@ -84,7 +82,6 @@
   "created_at": { "$date": "8-5-2025" }
 }
 
-// Wishlist Collection 
 {
   "user_id": ObjectId("..."),
   "product_id": ObjectId("..."),
