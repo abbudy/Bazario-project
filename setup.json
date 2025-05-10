@@ -1,0 +1,96 @@
+// Create database in mongoDB
+//User Authentication & Profiles
+{
+  "username": "admin",
+  "email": "admin@bazario.com",
+  "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+  "first_name": "Admin",
+  "last_name": "User",
+  "role": "admin",  // "user" or "admin"
+  "created_at": { "$date": "10-4-2025" },
+  "updated_at": { "$date": "1-5-2025" }
+}
+
+
+//Categories Collection
+{
+  "name": "Electronics",
+  "description": "Electronic devices and accessories",
+  "image_url": "https://i.etsystatic.com/23529908/r/il/18a4b8/6365074822/il_1588xN.6365074822_2bfe.jpg",
+  "created_at": { "$date": "10-4-2025" },
+  "updated_at": { "$date": "1-5-2025" }
+}
+
+{
+  "name": "clothing",
+  "description": "clothes",
+  "image_url": "https://i.etsystatic.com/5992384/r/il/167eef/6312921795/il_1588xN.6312921795_f8p4.jpg",
+  "created_at": { "$date": "NOW" },
+  "updated_at": { "$date": "NOW" }
+}
+
+{
+  "name": "Home & Kitchen",
+  "description": "Home & Kitchens",
+  "image_url": "https://i.etsystatic.com/53523425/r/il/e1ff5f/6356710142/il_1588xN.6356710142_h1r9.jpg",
+  "created_at": { "$date": "NOW" },
+  "updated_at": { "$date": "NOW" }
+}
+{
+  "name": "Books",
+  "description": "Books collection",
+  "image_url": "https://www.oursouthernhomesc.com/wp-content/uploads/12-book-fiiction-2023.jpg",
+  "created_at": { "$date": "NOW" },
+  "updated_at": { "$date": "NOW" }
+}
+//Products Collection (products)
+{
+  "category_id": ObjectId("123456"), 
+  "name": "Smartphone X",
+  "description": "A powerful modern smartphone",
+  "price": 599.99,
+  "stock": 50,
+  "image_url": "https://i.etsystatic.com/59337687/r/il/b01082/6838001636/il_1588xN.6838001636_c94y.jpg",
+  "is_featured": true,
+  "created_at": { "$date": "NOW" },
+  "updated_at": { "$date": "NOW" }
+}
+{
+  "user_id": ObjectId("000000"),     
+  "product_id": ObjectId("000000"),  
+  "quantity": 2,
+  "created_at": { "$date": "NOW" },
+  "updated_at": { "$date": "NOW" }
+}
+
+//Orders Collection (orders)
+{
+  "user_id": ObjectId("123456"),
+  "total_amount": 120.75,
+  "status": "pending",   
+  "shipping_address": "123 Main St, Springfield",
+  "payment_status": "pending", 
+  "stripe_payment_id": "pi_1XYZabc...",
+  "created_at": { "$date": "NOW" },
+  "updated_at": { "$date": "NOW" }
+}
+
+//Order Items Collection (order_items)
+{
+  "order_id": ObjectId("111111"),
+  "product_id": ObjectId("022222"),
+  "quantity": 1,
+  "price": 40.25,
+  "created_at": { "$date": "8-5-2025" }
+}
+
+// Wishlist Collection 
+{
+  "user_id": ObjectId("..."),
+  "product_id": ObjectId("..."),
+  "added_at": { "$date": "10-5-2025" }
+}
+
+
+
+
