@@ -39,7 +39,7 @@ Bazario-project/
 
 ### Backend
 - PHP 8.0+
-- MySQL Database
+- MongoDB cloud
 - Composer for dependency management
 
 ## Features
@@ -56,7 +56,7 @@ Bazario-project/
 
 1. **Prerequisites**
    - PHP 8.0 or higher
-   - MySQL 5.7 or higher
+   -MongoDb 
    - Web server (Apache/Nginx)
    - Composer
 
